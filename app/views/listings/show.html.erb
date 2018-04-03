@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-md-6 col-lg-3">
+    <div class="img-thumbnail">
+      <%= image_tag @listing.image.url(:medium), class:"img-fluid, centre_img" %>
+    </div>
+  
+    <p class="star-rating" data-score= <%= @avg_rating %>></p>
+    <p><%= "#{@reviews.length} reviews" %></p>
+
+    <p><%= link_to "Write a Review", new_listing_review_path(@listing), class:"btn btn-primary" %></p>
+
+    <% if current_user == @listing.user  %>
+      <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link"  %> |
+    <% end %>   
+    <%= link_to 'Back', shop_path, class:"btn btn-link"  %>
+
+  </div>
+
+  <div class="col-md-6 col-lg-9">
+    <h3><%= @listing.title %></h3>
+    <p>Artist: <%= @listing.artist %></p>
+    <p>Type: <%= @listing.category.name %></p>
+    <p>Description:<br/> <%= @listing.description %></p>
+
+        <%= form_for(@order_item, remote: true) do |f| %>
+        <%= f.hidden_field :listing_id, value: @listing.id %>
+        <%= f.hidden_field :seller_id, value: @listing.user_id %>
+        <%= f.hidden_field :buyer_id, value: current_user.id %>        
+        <p>Price: <%= number_to_currency(@listing.price, :locale => :ir) %></p>
+        <div class="form-group">
+          <p>Quantity: <%= f.number_field :quantity, value: 1, min: 1 %></p>
+        </div>
+        <% if user_signed_in? %>
+          <p><%= f.submit "Add to cart", class: 'btn btn-primary' %></p>
+        <% else %>
+          <h3 style="color:red;">To add this item to the cart you must first be logged in</h3>
+          <p><%= link_to "Log In", user_session_path, class: 'btn btn-primary' %></p>
+
+        <% end %>
+      <% end %>
+
+<br/>
+    <% if @reviews.blank? %>
+      <h3>No reviews yet! Be the first to write one.</h3>
+    <% else %>
+    <h3>Current Reviews</h3>
+    <table class="table">
+      <tbody>
+        <% @reviews.each do | review | %>  
+          <tr>
+            <td><h4><%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}."%></h4>
+              <p><%= review.created_at.strftime("%d/%m/%y") %></p>
+            </td>
+            <td>
+              <div class="star-rating" data-score= <%= review.rating %> ></div><br/>
+              <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>   
+              
+              <% if user_signed_in? %>     
+                <% if (review.user == current_user) || (current_user.admin?) %>    
+                  <%= link_to "Edit", edit_listing_review_path(@listing, review), class:"btn btn-link"  %> |
+                  <%= link_to "Delete", listing_review_path(@listing, review), class:"btn btn-link" , method: :delete %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

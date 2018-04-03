@@ -1,0 +1,326 @@
+body {
+  background-color: #F5F5F1 !important;
+  color: #333 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.container {
+  margin-top: 40px;
+  min-height:100%;
+}
+
+.social-media {
+  float: right;
+  padding-top: 20px;
+  padding-right: 25px;
+}
+
+.copyright {
+  float: left;
+  padding-top: 20px;
+  padding-left: 25px;
+}
+
+.navbar {
+  background-color: F5F5F1;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px #ccc;
+}
+
+.navbar-brand {
+  color: #faed5b !important;
+  font-size: 40px !important;
+  font-weight: bold;
+  font-family: 'Hobo Std';
+  text-shadow: 2px 0 0 #ff0000, -2px 0 0 #ff0000, 0 2px 0 #ff0000, 0 -2px 0 #ff0000, 1px 1px #ff0000, -1px -1px 0 #ff0000, 1px -1px 0 #ff0000, -1px 1px 0 #ff0000;
+}
+
+.navbar-nav > li > a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ff0000;
+  padding-right: 20px;
+}
+
+.navbar-nav > li > a:hover {
+  text-decoration: none;
+  color: #666;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: red;
+}
+
+a.nav-link.centre {
+  color: red !important;
+}
+
+a.nav-link.centre:hover {
+  color: rgba(0,0,0,.9) !important;
+}
+.jumbotron {
+  background-color: #000 !important;
+  max-height: 440px;
+  h1 {
+    font-family: guardian-egyptt, georgia, serif;
+    color: #fff;
+    text-shadow: 2px 3px 3px yellow;
+  }
+}
+
+#footer {
+  height: 75px;
+  width: 100%;
+  background-color: #ede4d0;
+}
+
+.centre {
+  text-align: center;
+}
+
+.centre_img {
+  width: 100%;
+}
+
+.img-thumbnail {
+  margin-bottom: 20px;
+}
+
+.img-thumbnail a.img-fluid img {
+    width: 200px;
+    border: 1px solid #ccc;
+}
+
+.manage-img {
+    width: 100px;
+}
+
+.custom_btn {
+  margin-top: 40px;
+  margin-bottom: 65px;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+li.active.cart {
+    margin-top: 8px;
+}
+
+/******************************* message board *******************************************/
+
+
+.btn-custom {
+  background-color: #fff;
+  color: #0a8fd5;
+  border-radius: 8px;
+  padding: 10px 20px;
+  &:hover {
+    color: #383838;
+    transition: 0.5s;
+    background-color: #fff;
+    text-decoration: none;
+  }
+}
+
+.btn:hover {
+  transition: 0.5s;
+  color: #383838;
+  background-color: #fff;
+}
+
+.btn-default {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;}
+
+/* Navbar styles */
+
+
+.navbar-default {
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #fff;
+
+  .navbar-nav > li > a {
+    color: #222;
+  }
+
+  .navbar-link {
+    color: #222;
+  }
+
+  .navbar-brand {
+    color: #222;
+    letter-spacing: 1.1px;
+  }
+
+}
+
+
+/* Links styles */
+
+.links {
+  margin-top: 20px;
+  .btn-default {
+    color: #0a8fd5;
+  }
+}
+
+.btn-link {
+	color: #ff0000;
+	text-decoration: none;
+}
+
+.btn-link:hover {
+	color: #666;
+	text-decoration: none;
+}
+
+/* Message styles */
+
+.message {
+  box-sizing: border-box;
+  background-image: url('https://i1.wp.com/trippybackgrounds.co/wp-content/uploads/2017/09/trippy-wallpaper.jpg');
+  background-size: contain;
+  /*background-color: #383838; */
+  margin-bottom: 25px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 1.4em 1.4em;
+  height: 200px;
+  border-bottom: 5px solid #ff0000;
+  border-radius: 10px;
+
+  .message-title {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: white;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+}
+  .btn-custom {
+	  margin-top: 25px;
+	  color: red;
+	  padding: 5px;
+	  border: 1px solid red;
+  }
+
+
+  .btn-custom:hover {
+	  color: #666;
+}
+
+.message:nth-child(4n) {
+  clear: left;
+}
+
+/* Message show-page styles */
+
+.message-show {
+  box-sizing: border-box;
+  background-color: #383838;
+  padding: 2.0em 1.5em;
+  border-bottom: 4px solid #ff000;
+  color: #fff;
+  border-radius: 5px;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .message-desc {
+    font-size: 1.1em;
+    line-height: 1.75;
+    margin-bottom: 50px;
+    color: limegreen;
+  }
+
+  .message-posted-by {
+    color: #eee;
+    font-size: 0.9em;
+  }
+
+  .reply-to-msg {
+    margin-top: 50px;
+  }
+
+}
+
+
+/* Comment styles */
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display|Muli:300,400);
+
+.comment {
+  border-bottom: 1px solid #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .comment-content {
+    font-size: 1.25em;
+    color: orange;
+  } 
+
+  .comment-posted-by {
+    color: #eee;
+    font-size: 0.8em;
+  }
+
+  .links {
+    margin-top: 15px;
+    a {
+      color: #0a8fd5;
+      margin-right: 15px;
+    }
+  }
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 255px;
+	height: 411px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	background-color: #fff;
+	padding: 10px;
+	font-size: .90em;
+	
+}
